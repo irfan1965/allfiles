@@ -12,4 +12,4 @@ for i in range(2,n+1):
     b=c
     print(c)
     c=a+b
-    #fibbonacci
+    #as
