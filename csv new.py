@@ -32,7 +32,7 @@ while t==1:
         for j in range(len(l[0])):
             for k in range(1):
                 if y[i][j][1]  > y[i+1][j][0]  and (y[i+1][j][0] !=0  and y[i][j][1] !=0):
-                    #print(y[i][j][1]  , y[i+1][j][0]  )
+                    print(y[i][j][1]  , y[i+1][j][0]  )
                     c+=1
                 
             if c==1:
@@ -40,8 +40,16 @@ while t==1:
             else:
                 r.append([0,0])    
             c=0
-        g[i+1]=r
-        print(g[i+1],"sdf")
+        y[i+1]=r
+        print(y[i+1])
         r=[]    
         t=0
 print()
+# c=0
+# for i in y:
+#     if i[0]!=i[1]:
+#         print(i)
+#         c=c+1
+#     else:
+#         c=c+1
+print(y[-1])

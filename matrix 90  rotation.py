@@ -11,4 +11,5 @@ for i in range(len(p)):
     k.append(p[j][i])
   o.append(k)
   k=[]
-print(o)
+for i in o:
+  print(i)
