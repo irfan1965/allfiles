@@ -1,4 +1,4 @@
-n=15
+n=int(input())
 s=""
 r=0
 while n!=0 :

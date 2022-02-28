@@ -1,7 +1,5 @@
-from calendar import c
 
-
-n=int(input())
+n =int(input())
 a=0
 b=1
 c=a+b

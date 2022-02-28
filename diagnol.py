@@ -4,18 +4,22 @@ v=[]
 for i in range(k-1,-1,-1):
     print(i)
     v.append(i)
-for i in v[::-1]:
-    v.append(-+v[i])
-v.pop()
 print(v)
+x=v[:2]
+print(x)
+for i in x[::-1]:
+    print(i)
+    v.append(-+i)
+
+print(v,"jfk")
 b=[]
 n=[]
-
-for i in range(k):
+#print(l[2][1])
+for o in v:
+  for i in range(k):
     for j in range(k):
-        if v[i]==(i-j):
-            print(l[i])
-            b.append(l[i])
-    n.append(b)
-    b=[]             
+        if o==(i-j):
+            b.append(l[i][j])
+  n.append(b)
+  b=[]             
 print(n)
