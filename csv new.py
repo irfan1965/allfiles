@@ -32,7 +32,9 @@ while t==1:
         for j in range(len(l[0])):
             for k in range(1):
                 if y[i][j][1]  > y[i+1][j][0]  and (y[i+1][j][0] !=0  and y[i][j][1] !=0):
+                    #print(y[i][j][1]  , y[i+1][j][0]  )
                     c+=1
+                
             if c==1:
                 r.append(y[i][j])
             else:
