@@ -5,7 +5,10 @@ p=""
 s=""
 for n in m:
     if len(n)>3:
-        p=n[1:len(n)-1]
+        if n[-1].isalpha():
+            p=n[1:len(n)-1]
+        else:
+            p=n[1:len(n)-2]
         p=list(p)
         random.shuffle(p)
         g=n[0]
@@ -14,7 +17,12 @@ for n in m:
                 g+=i
             else:
                 s+=i
-        g+=n[-1]
+        if n[-1].isalpha():
+            g+=n[-1]
+        else:
+            g+=n[-2:]
+        
+
         print(g,end=" ")
     else:
         print(n,end=" ")
