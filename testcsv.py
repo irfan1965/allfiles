@@ -60,6 +60,7 @@ for i in range(ceil(len(y)/2)):
             print(g[i][j])
             pass
         c=0
+print(g)
 
 
         
