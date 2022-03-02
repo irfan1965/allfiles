@@ -17,11 +17,13 @@ from math import *
 #l=[["A","B","c","D","E","F"],]
 o=["A","B","C"]
 print(o)
+
 l=[
 [[9,10],[10,11],[1,3],[4,5]],
 [[9,10],[11,12],[12,3],[4,6]],
-[[9,11],[12,1],[1,3],[4,5]]
+[[9,11],[12,1],[1,3],[4,5]],
  ]
+ 
 
 # for i in l:
 #     print(i)
@@ -47,15 +49,11 @@ while t==1:
     c=0
     for i in range(n-1):
         for j in range(len(l[0])):
-            for k in range(2):
-                if y[i][j][k]  in range(y[i+1][j][0],y[i+1][j][1]+1) :
+            for k in range(1):
+                if  (y[i][j][1] > y[i+1][j][0])  and ((y[i+1][j][0] !=0  and y[i][j][1] !=0) and y[i][j][0] < y[i+1][j][1])  :
                     c+=1
                     
-                    #print(y[i+1][j][0]<=y[i][j][k])
-                elif y[i][j][k] in range(y[i+1][j][0],y[i][j][1]+1) :
-                    c+=1
-                
-            if c==2:
+            if c==1:
                 r.append(y[i][j])
             else:
                 r.append([0,0])    
