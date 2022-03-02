@@ -61,10 +61,11 @@ while t==1:
                 r.append([0,0])    
             c=0
         g[i+1]=r
-        print(g[i+1],"sdf")
+        #print(g[i+1],"sdf")
         r=[]    
         t=0
-print()
+print("Timing are:")
+print(g[-1])
 # print(g[0])
 # print(g[1])
 #        l
