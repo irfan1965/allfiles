@@ -16,6 +16,22 @@ for i in range(len(l[0])):
         b.append(l[j][i])
     m.append(b)
     b=[]
+
+def temp_update(e1,rt):
+    #print(e1,rt)
+    for i in e1:
+        if i[0]>rt[0]:
+            e1.insert(0,rt)
+            break
+        elif e1.index(i)==len(e1)-1:
+            e1.append(rt)
+            break
+    for i in e1:
+        if i[0]==i[1]:
+            del e1[e1.index(i)]
+    #print(e1)
+    return e1
+
 #print(m,"irfan")
 v=[]
 b=[]
@@ -38,10 +54,14 @@ d=[]
 c=0
 for i in g:
     print(i)
-while t==1:
+ind=[]
+print("do you want meeting enter yes or no:")
+t=input()
+while t=="yes":
     n=int(input("enter how many number of employee to conduct meetings :"))
     for i in range(n):
         f=id_s.index(input("enter employee name :   "))
+        ind.append(f)
         y.append(g[f])  
     #print(y,"erugfyhj")
    # print(y[0],"erugfyhj")
@@ -95,25 +115,51 @@ while t==1:
     #print(c2)
     l1=[]
     s2=[]
+    st=[]
     for i in range(len(c2)):
         for j in range(len(c3)//2):
             #print(max(c2[i]),":",min(c3[i]))
             s2.append([(max(c2[i])),(min(c3[i]))])
             l1.append(abs(max(c2[i])-min(c3[i])))
-    print(s2)
+    print("common Timings",s2)
     print("enter your meeting in minutes")
     b1=int(input())
     for i in l1:
         if b1<=i:
             print(*s2[l1.index(i)])
+            st.append(s2[l1.index(i)][0])
             break
-        else:
-            print("No Meeting is Possible right Now! (* *) ")  
-    
+    else:
+        print("No Meeting is Possible right Now! (* *) ")  
+    st.append(st[0]+b1)
+    print(st)
     # print("Do you want to shedule another meeting ?  yes/no")
     # n=input()
     # if n=="yes":
-    t=0
+
+    rs=u
+    temp=[]
+    #"p" has index values
+    #print(rs)
+    #print(u)
+    for i in u:
+        for j in range(len(i)):
+            if i[j][0]<=st[0] and i[j][1]>=st[0]:
+                temp.append([st[1],u[u.index(i)][j][1]])
+                u[u.index(i)][j][1]=st[0]
+    #print(u)
+    #print(temp,"fdgnyu")
+    for i in u:
+        u[u.index(i)]=temp_update(i,temp[u.index(i)])
+    #print(u)
+    for i in range(len(u)):
+        b[ind[i]]=u[i]
+    for i in b:
+        print(i,"sdf")
+         
+    print("Do you want to shedule another meeting ?  yes/no")
+    t=input()
+    y=[]
 
 
         
