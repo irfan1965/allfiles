@@ -59,56 +59,64 @@ while t==1:
         #print(i,"is value",res)
         y[i+1]=res
         res=[]    
-        t=0
-y=y[-1]
-p=[]#finding index whith there common timings
-for i in y:
-    if i != [0,0] :
-        p.append(y.index(i))
+       
+    y=y[-1]
+    p=[]#finding index whith there common timings
+    for i in y:
+        if i != [0,0] :
+            p.append(y.index(i))
 
-#print(p)
-t1=[]
-c1=[]
-#print(u,"thyos is u")
-
-for i in p:
-    for j in range(0,len(u)):
-        t1.append(u[j][i])
-    c1.append(t1)
+    #print(p)
     t1=[]
-#print(c1)#common timings
+    c1=[]
+    #print(u,"thyos is u")
 
-k1=[]
-n1=[]
-c2=[]
-c3=[]
-for i in range(len(c1)):
-    for j in range(len(c1[i])):
-        for h in range(len(c1[i][j])//2):
-            k1.append((c1[i][j][0]))
-            n1.append((c1[i][j][-1]))
-    c2.append(k1)
-    c3.append(n1)
+    for i in p:
+        for j in range(0,len(u)):
+            t1.append(u[j][i])
+        c1.append(t1)
+        t1=[]
+    #print(c1)#common timings
+
     k1=[]
     n1=[]
-#print(c3)
-#print(c2)
-l1=[]
-s2=[]
-for i in range(len(c2)):
-    for j in range(len(c3)//2):
-        #print(max(c2[i]),":",min(c3[i]))
-        s2.append([(max(c2[i])),(min(c3[i]))])
-        l1.append(abs(max(c2[i])-min(c3[i])))
-print(s2)
-print("enter your meeting in minutes")
-b1=int(input())
-for i in l1:
-    if b1<=i:
-        print(s2[l1.index(i)])
-        print() 
+    c2=[]
+    c3=[]
+    for i in range(len(c1)):
+        for j in range(len(c1[i])):
+            for h in range(len(c1[i][j])//2):
+                k1.append((c1[i][j][0]))
+                n1.append((c1[i][j][-1]))
+        c2.append(k1)
+        c3.append(n1)
+        k1=[]
+        n1=[]
+    #print(c3)
+    #print(c2)
+    l1=[]
+    s2=[]
+    for i in range(len(c2)):
+        for j in range(len(c3)//2):
+            #print(max(c2[i]),":",min(c3[i]))
+            s2.append([(max(c2[i])),(min(c3[i]))])
+            l1.append(abs(max(c2[i])-min(c3[i])))
+    print(s2)
+    print("enter your meeting in minutes")
+    b1=int(input())
+    for i in l1:
+        if b1<=i:
+            print(*s2[l1.index(i)])
+            break
+        else:
+            print("No Meeting is Possible right Now! (* *) ")  
+    
+    # print("Do you want to shedule another meeting ?  yes/no")
+    # n=input()
+    # if n=="yes":
+    t=0
 
-       
+
+        
 
 
 
