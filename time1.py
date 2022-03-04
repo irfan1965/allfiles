@@ -21,7 +21,7 @@ def temp_update(e1,rt):
     #print(e1,rt)
     for i in e1:
         if i[0]>rt[0]:
-            e1.insert(0,rt)
+            e1.insert(e1.index(i),rt)
             break
         elif e1.index(i)==len(e1)-1:
             e1.append(rt)
@@ -55,6 +55,7 @@ c=0
 for i in g:
     print(i)
 ind=[]
+
 print("do you want meeting enter yes or no:")
 t=input()
 while t=="yes":
@@ -62,17 +63,40 @@ while t=="yes":
     for i in range(n):
         f=id_s.index(input("enter employee name :   "))
         ind.append(f)
-        y.append(g[f])  
-    #print(y,"erugfyhj")
+        y.append(b[f])  
+    print(y,"erugfyhj")
    # print(y[0],"erugfyhj")
     u=copy.deepcopy(y) #assigning values
+    m1=[]#finding max len
+    for i in y:
+        m1.append(len(i))
+    q=0
+    q=max(m1)
+    print(m1)
+    ct=0
+    for i in range(len(m1)):
+      if m1[i]==m1[0]:
+        ct+=1 
+    if ct != len(m1):
+        r1=y[m1.index(q)]
+        #print(r1,"dht")
+        #print(y[0][0],"eg")
+        for i in range(len(y)):
+            if len(y[0][i])<q:
+                for j in range(len(y[i])-1)  :
+                    if y[i][j][0] < r1[j][1]:
+                            pass
+                    else:
+                            y[i].insert(r1.index(r1[j]),[0,0])
+                            print("hi")
+                            break
     for i in range(len(y)-1):
         for j in range(len(y[i])):
             if (y[i][j][1] > y[i+1][j][0] and y[i][j][0] < y[i+1][j][1])  and ((y[i+1][j][0] !=0  and y[i][j][1] !=0))   :
                 c+=1
             if c==1:
                  res.append(y[i][j])
-                 #print(y[i][j],"jgy")
+                # print(y[i][j],"jgy")
             else:
                  res.append([0,0])    
             c=0
@@ -132,7 +156,7 @@ while t=="yes":
     else:
         print("No Meeting is Possible right Now! (* *) ")  
     st.append(st[0]+b1)
-    print(st)
+    #print(st)
     # print("Do you want to shedule another meeting ?  yes/no")
     # n=input()
     # if n=="yes":
@@ -151,19 +175,17 @@ while t=="yes":
     #print(temp,"fdgnyu")
     for i in u:
         u[u.index(i)]=temp_update(i,temp[u.index(i)])
+        print(temp[u.index(i)],"dghj")
     #print(u)
     for i in range(len(u)):
         b[ind[i]]=u[i]
     for i in b:
         print(i,"sdf")
          
-    print("Do you want to shedule another meeting ?  yes/no")
+    print("Do you want to shedules another meeting ?  yes/no ")
     t=input()
-    y=[]
-
-
-        
-
+    y=[]   
+    u=[]
 
 
 

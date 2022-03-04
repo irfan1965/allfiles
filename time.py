@@ -107,7 +107,7 @@ while t==1:
         if b1<=i:
             print(*s2[l1.index(i)])
             break
-        else:
+    else:
             print("No Meeting is Possible right Now! (* *) ")  
     
     # print("Do you want to shedule another meeting ?  yes/no")
